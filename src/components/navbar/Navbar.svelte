@@ -19,5 +19,6 @@
         justify-content: space-between;
         align-items: center;
         padding: var(--appSpacing);
+        z-index: 100;
     }
 </style>
