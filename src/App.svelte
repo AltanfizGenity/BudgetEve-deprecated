@@ -5,5 +5,13 @@
 </script>
 
 <Navbar/>
-<Home/>
+<main>
+  <Home/>
+</main>
 <MobileNavbar/>
+
+<style>
+  main {
+    margin-top: calc(48px);
+  }
+</style>
