@@ -1,0 +1,19 @@
+:root {
+  --appSpacing: 1rem;
+  --appSpacingX: 1rem;
+  --appSpacingY: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: var(--appSpacing);
+}
+
+#app {
+  width: 100%;
+}
