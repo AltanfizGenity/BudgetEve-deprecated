@@ -1,7 +1,6 @@
 <nav id="navbar">
   <div class="icon">menu</div>
-  <h3>title</h3>
-  <div class="icon">avatar</div>
+  <div class="avatar">avatar</div>
 </nav>
 
 <style>
