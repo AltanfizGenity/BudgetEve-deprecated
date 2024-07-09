@@ -4,11 +4,11 @@
   import Home from "./pages/Home.svelte";
 </script>
 
-<Navbar/>
+<Navbar />
 <main>
-  <Home/>
+  <Home />
 </main>
-<MobileNavbar/>
+<MobileNavbar />
 
 <style>
   main {
