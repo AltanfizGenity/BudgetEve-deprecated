@@ -1,8 +1,13 @@
 <script>
   export let className = "";
+  export let size = 24;
 </script>
 
-<button class={`icon-btn ${className}`}>
+<button
+  class={`icon-btn ${className}`}
+  style:width={`${size}px`}
+  style:height={`${size}px`}
+>
   <slot class="icon" />
 </button>
 
@@ -10,8 +15,6 @@
   .icon-btn {
     border: none;
     /* consider this using variable or dynamic approach */
-    width: 24px;
-    height: 24px;
     background-color: transparent;
   }
 
