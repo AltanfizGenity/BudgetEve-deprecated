@@ -1,5 +1,5 @@
 <nav id="navbar">
-  <div class="icon">menu</div>
+  <div class="logo">BudgetEve</div>
   <div class="avatar">avatar</div>
 </nav>
 
