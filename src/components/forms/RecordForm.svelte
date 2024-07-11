@@ -1,6 +1,7 @@
 <script>
   import { generateID } from "../../utils/forms";
   import { records } from "../../store/appstore";
+  import { isRecordFormOpen } from "../../store/appstate";
 
   function submit(event) {
     const formData = new FormData(event.target);
@@ -14,8 +15,8 @@
 
     data.id = generateID();
 
-    // deploy to store
-    $records = [...$records, data];
+    $records = [...$records, data]; // deploy to store
+    $isRecordFormOpen = false;
   }
 </script>
 
