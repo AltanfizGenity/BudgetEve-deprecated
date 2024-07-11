@@ -2,11 +2,12 @@
   import MobileNavbar from "./components/navbar/MobileNavbar.svelte";
   import Navbar from "./components/navbar/Navbar.svelte";
   import Home from "./pages/Home.svelte";
+  import RecordForm from "./components/forms/RecordForm.svelte";
 </script>
 
 <Navbar />
 <main>
-  <Home />
+  <RecordForm />
 </main>
 <MobileNavbar />
 
