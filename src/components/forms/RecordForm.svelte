@@ -1,4 +1,24 @@
-<form>
+<script>
+  import { generateID } from "../../utils/forms";
+
+  function submit(event) {
+    const formData = new FormData(event.target);
+    const data = {};
+
+    // extracting data
+    for (let entry of formData) {
+      let [key, value] = entry;
+      data[key] = value;
+    }
+
+    data.id = generateID();
+
+    // deploy to datacenter
+    console.log(data);
+  }
+</script>
+
+<form on:submit|preventDefault={submit}>
   <!-- Type -->
   <div class="input-group">
     <label for="type">type</label>
