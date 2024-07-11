@@ -1,12 +1,20 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   export let className = "";
   export let size = 24;
+
+  const dispatch = createEventDispatcher();
+
+  function click() {
+    dispatch("click");
+  }
 </script>
 
 <button
   class={`icon-btn ${className}`}
   style:width={`${size}px`}
   style:height={`${size}px`}
+  on:click={click}
 >
   <slot class="icon" />
 </button>
