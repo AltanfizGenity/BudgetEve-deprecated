@@ -2,7 +2,7 @@
   import IconButton from "./IconButton.svelte";
 </script>
 
-<IconButton className="add-btn">
+<IconButton className="add-btn" on:click>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
