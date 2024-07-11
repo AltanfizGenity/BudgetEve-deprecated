@@ -1,5 +1,6 @@
 <script>
   import { generateID } from "../../utils/forms";
+  import { records } from "../../store/appstore";
 
   function submit(event) {
     const formData = new FormData(event.target);
@@ -13,8 +14,8 @@
 
     data.id = generateID();
 
-    // deploy to datacenter
-    console.log(data);
+    // deploy to store
+    $records = [...$records, data];
   }
 </script>
 
