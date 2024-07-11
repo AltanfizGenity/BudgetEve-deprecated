@@ -7,7 +7,9 @@
 </script>
 
 <Navbar />
-<main></main>
+<main>
+  <Home />
+</main>
 {#if $isRecordFormOpen}
   <RecordForm />
 {/if}
