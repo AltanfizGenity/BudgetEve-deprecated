@@ -6,15 +6,15 @@
     HomeButton,
     RecordsButton,
   } from "../buttons/icon-button/";
-  import { isRecordFormOpen } from "../../store/appstate";
+  import { isRecordFormOpen, currentPage } from "../../store/appstate";
 </script>
 
 <nav id="mobile-navbar">
-  <HomeButton />
-  <RecordsButton />
+  <HomeButton on:click={() => ($currentPage = "home")} />
+  <RecordsButton on:click={() => ($currentPage = "records")} />
   <AddButton on:click={() => ($isRecordFormOpen = true)} />
-  <AnalyticsButton />
-  <AccountsButton />
+  <AnalyticsButton on:click={() => ($currentPage = "statistics")} />
+  <AccountsButton on:click={() => ($currentPage = "accounts")} />
 </nav>
 
 <style>
