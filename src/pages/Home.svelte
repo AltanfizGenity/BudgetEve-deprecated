@@ -2,7 +2,7 @@
   import { records } from "../store/appstore";
 </script>
 
-<main id="home">
+<section id="home">
   <h1>Hello, User!</h1>
   <div class="accounts-panel">accounts</div>
   <div class="records-panel">
@@ -12,4 +12,4 @@
     {/each}
   </div>
   <div class="analytics-panel">analytics</div>
-</main>
+</section>
