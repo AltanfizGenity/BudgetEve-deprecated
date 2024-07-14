@@ -2,13 +2,15 @@
   import MobileNavbar from "./components/navbar/MobileNavbar.svelte";
   import Navbar from "./components/navbar/Navbar.svelte";
   import Home from "./pages/Home.svelte";
+  import Records from "./pages/Records.svelte";
   import RecordForm from "./components/forms/RecordForm.svelte";
   import { isRecordFormOpen } from "./store/appstate";
 </script>
 
 <Navbar />
 <main>
-  <Home />
+  <!-- <Home /> -->
+  <Records />
 </main>
 {#if $isRecordFormOpen}
   <RecordForm />
