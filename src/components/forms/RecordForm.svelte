@@ -1,6 +1,6 @@
 <script>
   import { generateID } from "../../utils/forms";
-  import { records } from "../../store/appstore";
+  import { budgetAccounts, records } from "../../store/appstore";
   import { isRecordFormOpen } from "../../store/appstate";
 
   function submit(event) {
@@ -33,8 +33,9 @@
   <div class="input-group">
     <label for="account">account</label>
     <select name="account" id="account" required>
-      <option value="cash">cash</option>
-      <option value="bank">bank</option>
+      {#each $budgetAccounts as account}
+        <option value={account.name}>{account.name}</option>
+      {/each}
     </select>
   </div>
   <!-- Amount -->
