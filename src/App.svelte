@@ -11,13 +11,22 @@
   import RecordForm from "./components/forms/RecordForm.svelte";
 
   // store
-  import { isRecordFormOpen } from "./store/appstate";
+  import { isRecordFormOpen, currentPage } from "./store/appstate";
 </script>
 
 <Navbar />
+<!-- this code need refactored in future due using hard-coded if statement for routing -->
+<!-- use Svelte routing or external libraries for routing instead -->
 <main>
-  <!-- <Home /> -->
-  <Records />
+  {#if $currentPage === "home"}
+    <Home />
+  {:else if $currentPage === "records"}
+    <Records />
+  {:else if $currentPage === "statistics"}
+    <Statistics />
+  {:else if $currentPage === "accounts"}
+    <Accounts />
+  {/if}
 </main>
 {#if $isRecordFormOpen}
   <RecordForm />
