@@ -1,4 +1,5 @@
 <script>
+  import { isAccountFormOpen } from "../../store/appstate";
   import { budgetAccounts } from "../../store/appstore";
   import { generateID } from "../../utils/forms";
 
@@ -16,8 +17,7 @@
     data.amount = Number(data.amount);
     // @ts-ignore
     $budgetAccounts = [...$budgetAccounts, data]; // use jsdoc to solve this warning
-    console.log(data);
-    console.log($budgetAccounts);
+    $isAccountFormOpen = false;
   }
 </script>
 
