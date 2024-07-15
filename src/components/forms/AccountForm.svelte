@@ -47,7 +47,14 @@
   <!-- Amount -->
   <div class="input-group">
     <label for="amount">amount</label>
-    <input type="number" id="amount" name="amount" placeholder="0" required />
+    <input
+      type="number"
+      id="amount"
+      name="amount"
+      placeholder="0"
+      value="0"
+      required
+    />
   </div>
   <!-- Note -->
   <div class="input-group">
