@@ -1,4 +1,5 @@
 <script>
+  import AccountForm from "../components/forms/AccountForm.svelte";
   import { budgetAccounts } from "../store/appstore";
 </script>
 
@@ -12,4 +13,10 @@
       </div>
     {/each}
   </div>
+  <div class="actions">
+    <button>new account</button>
+    <button>manage account</button>
+  </div>
 </section>
+
+<AccountForm />
