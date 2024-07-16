@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   export let className = "";
   export let size = 24;
+  export let isActive;
 
   const dispatch = createEventDispatcher();
 
@@ -12,6 +13,7 @@
 
 <button
   class={`icon-btn ${className}`}
+  class:active={isActive}
   style:width={`${size}px`}
   style:height={`${size}px`}
   on:click={click}
@@ -29,5 +31,9 @@
   .icon {
     width: inherit;
     height: inherit;
+  }
+
+  .icon-btn:is(.active) {
+    color: var(--primaryColor);
   }
 </style>
