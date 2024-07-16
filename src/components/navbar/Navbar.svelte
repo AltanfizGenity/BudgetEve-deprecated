@@ -1,6 +1,10 @@
+<script>
+  import Signup from "../buttons/text-buttons/Signup.svelte";
+</script>
+
 <nav id="navbar">
   <div class="logo">BudgetEve</div>
-  <div class="avatar">avatar</div>
+  <Signup />
 </nav>
 
 <style>
