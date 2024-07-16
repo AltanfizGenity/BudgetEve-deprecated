@@ -1,8 +1,9 @@
 <script>
   import IconButton from "./IconButton.svelte";
+  export let isActive = false;
 </script>
 
-<IconButton className="records-btn" on:click>
+<IconButton className="records-btn" on:click {isActive}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

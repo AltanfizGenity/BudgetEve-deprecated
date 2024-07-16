@@ -10,11 +10,24 @@
 </script>
 
 <nav id="mobile-navbar">
-  <HomeButton on:click={() => ($currentPage = "home")} />
-  <RecordsButton on:click={() => ($currentPage = "records")} />
+  <!-- use class  -->
+  <HomeButton
+    on:click={() => ($currentPage = "home")}
+    isActive={$currentPage === "home"}
+  />
+  <RecordsButton
+    on:click={() => ($currentPage = "records")}
+    isActive={$currentPage === "records"}
+  />
   <AddButton on:click={() => ($isRecordFormOpen = true)} />
-  <AnalyticsButton on:click={() => ($currentPage = "statistics")} />
-  <AccountsButton on:click={() => ($currentPage = "accounts")} />
+  <AnalyticsButton
+    on:click={() => ($currentPage = "statistics")}
+    isActive={$currentPage === "statistics"}
+  />
+  <AccountsButton
+    on:click={() => ($currentPage = "accounts")}
+    isActive={$currentPage === "accounts"}
+  />
 </nav>
 
 <style>
