@@ -2,6 +2,12 @@
   --appSpacing: 1rem;
   --appSpacingX: 1rem;
   --appSpacingY: 1rem;
+
+  --primaryColor: #316dda;
+  --secondaryColor: #7aa5f1;
+  --accentColor: #508cf8;
+  --backgroundColor: #f9fbfd;
+  --dangerColor: #f0758d;
 }
 
 * {
