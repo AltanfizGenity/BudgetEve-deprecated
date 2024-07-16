@@ -1,8 +1,8 @@
 <script>
   import { generateID } from "../../utils/forms";
-  import { budgetAccounts, records } from "../../store/appstore";
+  import { budgetAccounts } from "../../store/appstore";
   import { isRecordFormOpen } from "../../store/appstate";
-  import { updateRecord } from "../../utils/data";
+  import { syncAfterNewRecord } from "../../utils/data";
 
   function submit(event) {
     const formData = new FormData(event.target);
@@ -15,9 +15,7 @@
     }
 
     data.id = generateID();
-
-    // $records = [...$records, data]; // deploy to store
-    updateRecord(data);
+    syncAfterNewRecord(data);
     $isRecordFormOpen = false;
   }
 </script>
