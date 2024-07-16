@@ -13,7 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 48px;
+    height: var(--navbarHeight);
     display: flex;
     justify-content: space-between;
     align-items: center;

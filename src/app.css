@@ -1,5 +1,5 @@
 :root {
-  --appSpacing: 1rem;
+  --appSpacing: 1.2rem;
   --appSpacingX: 1rem;
   --appSpacingY: 1rem;
 
@@ -8,6 +8,8 @@
   --accentColor: #508cf8;
   --backgroundColor: #f9fbfd;
   --dangerColor: #f0758d;
+
+  --navbarHeight: 72px;
 }
 
 * {
