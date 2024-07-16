@@ -2,6 +2,7 @@
   import { generateID } from "../../utils/forms";
   import { budgetAccounts, records } from "../../store/appstore";
   import { isRecordFormOpen } from "../../store/appstate";
+  import { updateRecord } from "../../utils/data";
 
   function submit(event) {
     const formData = new FormData(event.target);
@@ -15,7 +16,8 @@
 
     data.id = generateID();
 
-    $records = [...$records, data]; // deploy to store
+    // $records = [...$records, data]; // deploy to store
+    updateRecord(data);
     $isRecordFormOpen = false;
   }
 </script>
