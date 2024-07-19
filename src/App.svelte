@@ -12,6 +12,7 @@
 
   // store
   import { isRecordFormOpen, currentPage } from "./store/appstate";
+  import Overlay from "./components/core/Overlay.svelte";
 </script>
 
 <Navbar />
@@ -29,7 +30,9 @@
   {/if}
 </main>
 {#if $isRecordFormOpen}
-  <RecordForm />
+  <Overlay>
+    <RecordForm />
+  </Overlay>
 {/if}
 <MobileNavbar />
 
