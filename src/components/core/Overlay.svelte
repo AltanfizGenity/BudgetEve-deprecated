@@ -1,23 +1,34 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   import BackButton from "../buttons/icon-button/BackButton.svelte";
 
   export let zIndex = 200;
   export let useHeader = false;
   export let headerText = "title";
+  export let isOpen = false;
+
+  const dispatch = createEventDispatcher();
+
+  function close() {
+    dispatch("onclose");
+    isOpen = false;
+  }
 </script>
 
-<div class="overlay" style:z-index={zIndex}>
-  <div class="backlayer"></div>
-  <div class="content">
-    {#if useHeader}
-      <div class="header">
-        <BackButton />
-        <div class="title">{headerText}</div>
-      </div>
-    {/if}
-    <slot class="main-content"></slot>
+{#if isOpen}
+  <div class="overlay" style:z-index={zIndex}>
+    <div class="backlayer"></div>
+    <div class="content">
+      {#if useHeader}
+        <div class="header">
+          <BackButton on:click={close} />
+          <div class="title">{headerText}</div>
+        </div>
+      {/if}
+      <slot class="main-content"></slot>
+    </div>
   </div>
-</div>
+{/if}
 
 <style>
   .overlay {
