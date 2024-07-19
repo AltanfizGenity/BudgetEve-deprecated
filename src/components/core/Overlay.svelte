@@ -10,7 +10,7 @@
   const dispatch = createEventDispatcher();
 
   function close() {
-    dispatch("onclose");
+    dispatch("close");
     isOpen = false;
   }
 </script>
