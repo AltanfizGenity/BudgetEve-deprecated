@@ -11,7 +11,6 @@
 
   function close() {
     dispatch("close");
-    isOpen = false;
   }
 </script>
 
