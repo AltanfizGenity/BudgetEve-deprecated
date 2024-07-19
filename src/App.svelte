@@ -11,8 +11,7 @@
   import RecordForm from "./components/forms/RecordForm.svelte";
 
   // store
-  import { isRecordFormOpen, currentPage } from "./store/appstate";
-  import Overlay from "./components/core/Overlay.svelte";
+  import { currentPage } from "./store/appstate";
 </script>
 
 <Navbar />
@@ -29,11 +28,7 @@
     <Accounts />
   {/if}
 </main>
-{#if $isRecordFormOpen}
-  <Overlay headerText="New record" useHeader>
-    <RecordForm />
-  </Overlay>
-{/if}
+<RecordForm />
 <MobileNavbar />
 
 <style>

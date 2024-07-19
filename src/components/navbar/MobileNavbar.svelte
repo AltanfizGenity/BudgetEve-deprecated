@@ -20,7 +20,12 @@
     isActive={$currentPage === "records"}
   />
   <div class="hover-btn-wrapper">
-    <AddButton on:click={() => ($isRecordFormOpen = true)} />
+    <AddButton
+      on:click={() => {
+        $isRecordFormOpen = true;
+        console.log($isRecordFormOpen);
+      }}
+    />
   </div>
   <AnalyticsButton
     on:click={() => ($currentPage = "statistics")}
