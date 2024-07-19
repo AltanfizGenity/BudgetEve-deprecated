@@ -24,7 +24,9 @@
           <div class="title">{headerText}</div>
         </div>
       {/if}
-      <slot class="main-content"></slot>
+      <div class="main-content">
+        <slot></slot>
+      </div>
     </div>
   </div>
 {/if}
@@ -41,6 +43,8 @@
   }
 
   .content {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--appSpacing);
@@ -57,5 +61,11 @@
     position: absolute;
     left: 50%;
     translate: -50%;
+  }
+
+  .main-content {
+    width: 100%;
+    height: 100%;
+    margin-top: var(--appSpacing);
   }
 </style>
