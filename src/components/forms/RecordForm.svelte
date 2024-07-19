@@ -58,8 +58,65 @@
     <!-- Note -->
     <div class="input-group">
       <label for="note">note</label>
-      <textarea name="note" id="note"></textarea>
+      <textarea name="note" id="note" rows="10"></textarea>
     </div>
-    <button type="submit">add record</button>
+    <button type="submit" class="submit-btn">Add record</button>
   </form>
 </Overlay>
+
+<style>
+  form {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--appSpacing);
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--appSpacing) / 2);
+  }
+
+  label {
+    text-transform: capitalize;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 1rem;
+    border-radius: 5px; /* consider using theme */
+    border: 1px solid var(--secondaryColor);
+    background-color: var(--foregroundColor);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    appearance: textfield;
+  }
+
+  .submit-btn {
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: var(--backgroundColor);
+    background-color: var(--primaryColor);
+    margin-top: auto;
+    font-weight: bold;
+  }
+</style>

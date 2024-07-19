@@ -6,6 +6,7 @@
   --primaryColor: #316dda;
   --secondaryColor: #7aa5f1;
   --accentColor: #508cf8;
+  --foregroundColor: hsl(210, 50%, 100%);
   --backgroundColor: #f9fbfd;
   --dangerColor: #f0758d;
 
@@ -18,9 +19,12 @@
   margin: 0;
 }
 
+* {
+  font-family: "Roboto", sans-serif, Arial;
+}
+
 body {
   padding: var(--appSpacing);
-  font-family: "Roboto", sans-serif, Arial;
   background-color: var(--backgroundColor);
 }
 
