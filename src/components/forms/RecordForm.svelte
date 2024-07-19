@@ -21,7 +21,6 @@
 </script>
 
 <form on:submit|preventDefault={submit}>
-  <h4>New Record</h4>
   <!-- Type -->
   <div class="input-group">
     <label for="type">type</label>

@@ -30,7 +30,7 @@
   {/if}
 </main>
 {#if $isRecordFormOpen}
-  <Overlay>
+  <Overlay headerText="New record" useHeader>
     <RecordForm />
   </Overlay>
 {/if}
