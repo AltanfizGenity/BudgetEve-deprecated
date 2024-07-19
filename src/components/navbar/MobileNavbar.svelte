@@ -19,7 +19,9 @@
     on:click={() => ($currentPage = "records")}
     isActive={$currentPage === "records"}
   />
-  <AddButton on:click={() => ($isRecordFormOpen = true)} />
+  <div class="hover-btn-wrapper">
+    <AddButton on:click={() => ($isRecordFormOpen = true)} />
+  </div>
   <AnalyticsButton
     on:click={() => ($currentPage = "statistics")}
     isActive={$currentPage === "statistics"}
@@ -36,10 +38,17 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    height: calc(48px + 0.5rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--appSpacing);
+    padding: 0 var(--appSpacing);
     z-index: 100;
+    background-color: #fff;
+  }
+
+  .hover-btn-wrapper {
+    position: relative;
+    top: -25%;
   }
 </style>
