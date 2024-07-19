@@ -21,6 +21,7 @@
 body {
   padding: var(--appSpacing);
   font-family: "Roboto", sans-serif, Arial;
+  background-color: var(--backgroundColor);
 }
 
 #app {
