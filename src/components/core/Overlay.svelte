@@ -19,7 +19,7 @@
     <div class="backlayer"></div>
     <div class="content">
       {#if useHeader}
-        <div class="header">
+        <div class="header" style:z-index={zIndex + 1}>
           <BackButton on:click={close} />
           <div class="title">{headerText}</div>
         </div>
@@ -39,7 +39,6 @@
     background-color: var(--backgroundColor);
     width: 100%;
     height: 100dvh;
-    padding: var(--appSpacing);
   }
 
   .content {
@@ -48,13 +47,14 @@
     display: flex;
     flex-direction: column;
     gap: var(--appSpacing);
+    padding: var(--appSpacing) 0;
   }
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    padding: 0 var(--appSpacing);
   }
 
   .title {
@@ -67,5 +67,7 @@
     width: 100%;
     height: 100%;
     margin-top: var(--appSpacing);
+    overflow-y: auto;
+    padding: 0 var(--appSpacing);
   }
 </style>
