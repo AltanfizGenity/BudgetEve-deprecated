@@ -5,6 +5,8 @@
   import { syncAfterNewRecord } from "../../utils/data";
   import Overlay from "../core/Overlay.svelte";
 
+  let type = "income";
+
   function submit(event) {
     const formData = new FormData(event.target);
     const data = {};
@@ -19,6 +21,10 @@
     syncAfterNewRecord(data);
     $isRecordFormOpen = false;
   }
+
+  function changeType(event) {
+    type = event.target.value;
+  }
 </script>
 
 <Overlay
@@ -31,7 +37,13 @@
     <!-- Type -->
     <div class="input-group">
       <label for="type">type</label>
-      <select name="type" id="type" required>
+      <select
+        name="type"
+        id="type"
+        required
+        on:change={changeType}
+        value={type}
+      >
         <option value="income">income</option>
         <option value="expense">expense</option>
       </select>
@@ -49,9 +61,20 @@
     <div class="input-group">
       <label for="category">category</label>
       <select name="category" id="category" required>
-        {#each $categories.income as category}
-          <option value={category.categoryName}>{category.categoryName}</option>
-        {/each}
+        <!-- DRY Code, consider refactor -->
+        {#if type === "income"}
+          {#each $categories.income as category}
+            <option value={category.categoryName}
+              >{category.categoryName}</option
+            >
+          {/each}
+        {:else if type === "expense"}
+          {#each $categories.expenses as category}
+            <option value={category.categoryName}
+              >{category.categoryName}</option
+            >
+          {/each}
+        {/if}
       </select>
     </div>
     <!-- Amount -->
