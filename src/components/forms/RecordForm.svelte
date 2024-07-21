@@ -1,6 +1,6 @@
 <script>
   import { generateID } from "../../utils/forms";
-  import { budgetAccounts } from "../../store/appstore";
+  import { budgetAccounts, categories } from "../../store/appstore";
   import { isRecordFormOpen } from "../../store/appstate";
   import { syncAfterNewRecord } from "../../utils/data";
   import Overlay from "../core/Overlay.svelte";
@@ -42,6 +42,15 @@
       <select name="account" id="account" required>
         {#each $budgetAccounts as account}
           <option value={account.name}>{account.name}</option>
+        {/each}
+      </select>
+    </div>
+    <!-- Category -->
+    <div class="input-group">
+      <label for="category">category</label>
+      <select name="category" id="category" required>
+        {#each $categories.income as category}
+          <option value={category.categoryName}>{category.categoryName}</option>
         {/each}
       </select>
     </div>
