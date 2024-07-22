@@ -77,4 +77,24 @@
     color: #505050;
     margin-left: auto;
   }
+
+  /* consider using theme */
+  .record-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--appSpacing) / 2);
+    background-color: #fff;
+    box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
+    padding: var(--appSpacing);
+    border-radius: 5px;
+  }
+
+  .record {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
 </style>
