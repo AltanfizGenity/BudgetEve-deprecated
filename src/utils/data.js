@@ -18,7 +18,7 @@ export function syncAfterNewRecord(newRecord) {
 }
 
 export function updateRecord(newRecord) {
-  records.update((current) => [...current, newRecord]);
+  records.update((current) => [newRecord, ...current]);
 }
 
 export function updateBudget(newRecord) {
