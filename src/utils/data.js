@@ -25,7 +25,7 @@ export function updateBudget(newRecord) {
   budgetAccounts.update((current) => {
     let newAccounts = current.map((account) => {
       if (account.name == newRecord.account) {
-        account.amount += Number(newRecord.amount);
+        account.amount += newRecord.amount;
       }
       return account;
     });

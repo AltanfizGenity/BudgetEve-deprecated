@@ -18,6 +18,7 @@
     }
 
     data.id = generateID();
+    data.amount = Number(data.amount);
     syncAfterNewRecord(data);
     $isRecordFormOpen = false;
   }
