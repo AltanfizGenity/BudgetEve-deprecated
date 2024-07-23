@@ -125,6 +125,7 @@
     border-radius: 5px; /* consider using theme */
     border: 1px solid var(--secondaryColor);
     background-color: var(--foregroundColor);
+    width: 100%;
   }
 
   textarea {
