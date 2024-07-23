@@ -18,7 +18,10 @@ export function syncAfterNewRecord(newRecord) {
 }
 
 export function updateRecord(newRecord) {
-  records.update((current) => [newRecord, ...current]);
+  records.update((current) => {
+    let modified = [newRecord, ...current].sort((a, b) => b.date - a.date);
+    return modified;
+  });
 }
 
 export function updateBudget(newRecord) {
