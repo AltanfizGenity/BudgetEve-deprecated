@@ -1,5 +1,5 @@
 <script>
-  import { generateID } from "../../utils/forms";
+  import { generateID, getDate } from "../../utils/forms";
   import { budgetAccounts, categories } from "../../store/appstore";
   import { isRecordFormOpen } from "../../store/appstate";
   import { syncAfterNewRecord } from "../../utils/data";
@@ -19,6 +19,7 @@
 
     data.id = generateID();
     data.amount = Number(data.amount);
+    data.date = data.date ? getDate(data.date) : getDate(Date.now());
     syncAfterNewRecord(data);
     $isRecordFormOpen = false;
   }
