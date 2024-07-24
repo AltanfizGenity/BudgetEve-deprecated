@@ -136,6 +136,11 @@
     gap: 0.5rem;
   }
 
+  .record-group .date {
+    color: #aaa;
+    font-size: 0.8rem;
+  }
+
   .record-list {
     display: flex;
     flex-direction: column;
