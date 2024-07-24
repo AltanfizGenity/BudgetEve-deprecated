@@ -50,20 +50,22 @@
       <div class="panel-amount">{$totalBalance.expense}</div>
     </div>
   </div>
-  <div class="record-list">
+  <div class="record-panel">
     {#each groupedRecords as group}
       <div class="record-group">
         <div class="date">{getDateOfFormattedDateID(group[0])}</div>
-        {#each group[1] as record}
-          <div class="record">
-            <div class="left-info">
-              <div class="type">{record.category}</div>
+        <div class="record-list">
+          {#each group[1] as record}
+            <div class="record">
+              <div class="left-info">
+                <div class="type">{record.category}</div>
+              </div>
+              <div class="right-info">
+                <div class="amount">{record.amount}</div>
+              </div>
             </div>
-            <div class="right-info">
-              <div class="amount">{record.amount}</div>
-            </div>
-          </div>
-        {/each}
+          {/each}
+        </div>
       </div>
     {/each}
   </div>
@@ -120,18 +122,31 @@
   }
 
   /* consider using theme */
+
+  .record-panel {
+    margin-top: var(--appSpacing);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .record-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .record-list {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--appSpacing) / 2);
+    gap: calc(var(--accentColor) / 2);
     background-color: #fff;
     box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
-    padding: var(--appSpacing);
     border-radius: 5px;
   }
 
   .record {
-    padding: 0.8rem 0;
+    padding: 0.8rem var(--appSpacing);
     display: flex;
     align-items: center;
     justify-content: space-between;
