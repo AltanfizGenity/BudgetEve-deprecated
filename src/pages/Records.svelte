@@ -1,5 +1,41 @@
 <script>
+  import { beforeUpdate, onMount } from "svelte";
   import { records, totalBalance } from "../store/appstore";
+  import { formatDateID, getDateOfFormattedDateID } from "../utils/date";
+
+  let groupedRecords = new Map();
+
+  onMount(() => {
+    groupRecordsByDate();
+  });
+
+  beforeUpdate(() => {
+    groupRecordsByDate();
+  });
+
+  function groupRecordsByDate() {
+    let sortedGroupRecords = new Map();
+    let unsorted = $records.reduce((total, record) => {
+      let date = record.date;
+      let groupID = formatDateID(date);
+
+      if (!total[groupID]) {
+        total[groupID] = [];
+      }
+
+      total[groupID].push(record);
+      return total;
+    }, {});
+
+    let sortedKeys = Object.keys(unsorted).sort(
+      (a, b) => Number(b) - Number(a),
+    );
+
+    sortedKeys.forEach((key) => {
+      sortedGroupRecords.set(key, unsorted[key]);
+    });
+    groupedRecords = sortedGroupRecords;
+  }
 </script>
 
 <section id="records">
@@ -15,14 +51,19 @@
     </div>
   </div>
   <div class="record-list">
-    {#each $records as record}
-      <div class="record">
-        <div class="left-info">
-          <div class="type">{record.category}</div>
-        </div>
-        <div class="right-info">
-          <div class="amount">{record.amount}</div>
-        </div>
+    {#each groupedRecords as group}
+      <div class="record-group">
+        <div class="date">{getDateOfFormattedDateID(group[0])}</div>
+        {#each group[1] as record}
+          <div class="record">
+            <div class="left-info">
+              <div class="type">{record.category}</div>
+            </div>
+            <div class="right-info">
+              <div class="amount">{record.amount}</div>
+            </div>
+          </div>
+        {/each}
       </div>
     {/each}
   </div>
