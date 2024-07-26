@@ -1,5 +1,6 @@
 import { records } from "../store/appstore";
 import { budgetAccounts } from "../store/appstore";
+import { generateID } from "./forms";
 
 /**
  *
@@ -9,7 +10,7 @@ import { budgetAccounts } from "../store/appstore";
  * @param {string} note
  */
 export function getAccountObject(name, type, amount, note) {
-  return { name, type, amount, note };
+  return { id: generateID(), name, type, amount, note };
 }
 
 export function syncAfterNewRecord(newRecord) {
