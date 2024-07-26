@@ -47,15 +47,18 @@
   .account-list {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--appSpacing) / 2);
+    background-color: #fff;
   }
 
   .account {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: #fff;
     border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .account-list .account:not(:nth-child(1)) {
+    border-top: 1px solid #ddd;
   }
 </style>
