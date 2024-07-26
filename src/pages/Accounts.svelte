@@ -1,6 +1,7 @@
 <script>
+  import ManageAccount from "../components/edit/ManageAccount.svelte";
   import AccountForm from "../components/forms/AccountForm.svelte";
-  import { isAccountFormOpen } from "../store/appstate";
+  import { isAccountFormOpen, isManageAccountOpen } from "../store/appstate";
   import { budgetAccounts } from "../store/appstore";
 </script>
 
@@ -19,12 +20,19 @@
       class="btn text-btn primary-btn"
       on:click={() => ($isAccountFormOpen = true)}>new account</button
     >
-    <button class="btn text-btn primary-text-btn">manage account</button>
+    <button
+      class="btn text-btn primary-text-btn"
+      on:click={() => ($isManageAccountOpen = true)}>manage account</button
+    >
   </div>
 </section>
 
 {#if $isAccountFormOpen}
   <AccountForm />
+{/if}
+
+{#if $isManageAccountOpen}
+  <ManageAccount />
 {/if}
 
 <style>
