@@ -55,6 +55,16 @@ button {
   color: var(--primaryColor);
 }
 
+.danger-btn {
+  background-color: var(--dangerColor);
+  color: #eee;
+}
+
+.danger-text-btn {
+  background-color: transparent;
+  color: var(--dangerColor);
+}
+
 /* Form */
 form {
   position: relative;
