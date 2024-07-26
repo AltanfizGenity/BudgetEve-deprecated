@@ -1,7 +1,17 @@
 <script>
-  import { budgetAccounts } from "../../store/appstore";
+  import { budgetAccounts, records } from "../../store/appstore";
   import { isManageAccountOpen } from "../../store/appstate";
   import Overlay from "../core/Overlay.svelte";
+
+  function removeAccount(selectedAccount) {
+    $budgetAccounts = $budgetAccounts.filter(
+      (account) => account.id !== selectedAccount.id,
+    );
+
+    $records = $records.filter(
+      (record) => record.account !== selectedAccount.name,
+    );
+  }
 </script>
 
 <Overlay
@@ -17,9 +27,28 @@
           <div class="name">{account.name}</div>
         </div>
         <div class="option">
-          <button class="btn text-btn danger-text-btn">remove</button>
+          {#if $budgetAccounts.length > 1}
+            <button
+              class="btn text-btn danger-text-btn"
+              on:click={() => removeAccount(account)}>remove</button
+            >
+          {/if}
         </div>
       </div>
     {/each}
   </div>
 </Overlay>
+
+<style>
+  .account-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--appSpacing) / 2);
+  }
+
+  .account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
