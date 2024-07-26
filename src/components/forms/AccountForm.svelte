@@ -15,7 +15,7 @@
     }
 
     data.id = generateID(); // using current user data or default data length (length approach) instead
-    data.amount = Number(data.amount);
+    data.amount = Number(data.amount) || 0;
     // @ts-ignore
     $budgetAccounts = [...$budgetAccounts, data]; // use jsdoc to solve this warning
     $isAccountFormOpen = false;
@@ -54,7 +54,7 @@
     <!-- Amount -->
     <div class="input-group">
       <label for="amount">Amount</label>
-      <input type="number" id="amount" name="amount" placeholder="0" required />
+      <input type="number" id="amount" name="amount" placeholder="0" />
     </div>
     <!-- Note -->
     <div class="input-group">
