@@ -31,7 +31,7 @@
   <form on:submit|preventDefault={submit}>
     <!-- Type -->
     <div class="input-group">
-      <label for="name">name</label>
+      <label for="name">Name</label>
       <input
         type="text"
         id="name"
@@ -42,8 +42,8 @@
     </div>
     <!-- Type -->
     <div class="input-group">
-      <label for="account">account</label>
-      <select name="account" id="account" required>
+      <label for="type">Type</label>
+      <select name="type" id="type" required>
         <option value="cash">cash</option>
         <option value="virtual-account">virtual account</option>
         <option value="debit-card">debit card</option>
@@ -53,12 +53,12 @@
     </div>
     <!-- Amount -->
     <div class="input-group">
-      <label for="amount">amount</label>
+      <label for="amount">Amount</label>
       <input type="number" id="amount" name="amount" placeholder="0" required />
     </div>
     <!-- Note -->
     <div class="input-group">
-      <label for="note">note</label>
+      <label for="note">Note</label>
       <textarea name="note" id="note"></textarea>
     </div>
     <button type="submit" class="submit-btn">add account</button>
