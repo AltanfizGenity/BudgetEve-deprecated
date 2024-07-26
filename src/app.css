@@ -35,3 +35,22 @@ body {
 button {
   cursor: pointer;
 }
+
+.btn {
+  border: none;
+}
+
+.text-btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+.primary-btn {
+  background-color: var(--primaryColor);
+  color: #eee;
+}
+
+.primary-text-btn {
+  background-color: transparent;
+  color: var(--primaryColor);
+}
