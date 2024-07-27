@@ -1,5 +1,5 @@
 <script>
-  import { records } from "../store/appstore";
+  import { records, totalBalance } from "../store/appstore";
 </script>
 
 <section id="home">
@@ -7,8 +7,11 @@
   <div class="accounts-panel">
     <div class="panel balance-panel">
       <div class="panel-type">Balance</div>
-      <div class="panel-amount">0</div>
+      <div class="panel-amount">
+        {$totalBalance.income - $totalBalance.expense}
+      </div>
     </div>
+    <!-- Future feature -->
     <div class="panel saving-panel">
       <div class="panel-type">Saving</div>
       <div class="panel-amount">0</div>
