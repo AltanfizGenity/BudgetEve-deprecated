@@ -1,5 +1,18 @@
 <script>
+  import { beforeUpdate, onMount } from "svelte";
   import { records, totalBalance } from "../store/appstore";
+
+  let activeTypePanel = "income";
+  let filteredRecord;
+
+  onMount(() => updateFilteredRecord());
+  beforeUpdate(() => updateFilteredRecord());
+
+  function updateFilteredRecord() {
+    filteredRecord = $records.filter(
+      (record) => record.type === activeTypePanel,
+    );
+  }
 </script>
 
 <section id="home">
@@ -18,10 +31,30 @@
     </div>
   </div>
   <div class="records-panel">
-    <h2>records</h2>
-    {#each $records as record}
-      record #{record.id}
-    {/each}
+    <div class="type-selector">
+      <button
+        class="btn text-btn"
+        class:active={activeTypePanel === "income"}
+        on:click={() => (activeTypePanel = "income")}>income</button
+      >
+      <button
+        class="btn text-btn"
+        class:active={activeTypePanel === "expense"}
+        on:click={() => (activeTypePanel = "expense")}>expense</button
+      >
+    </div>
+    <div class="record-list">
+      {#each filteredRecord as record}
+        <div class="record">
+          <div class="left-info">
+            <div class="type">{record.category}</div>
+          </div>
+          <div class="right-info">
+            <div class="amount">{record.amount}</div>
+          </div>
+        </div>
+      {/each}
+    </div>
   </div>
 </section>
 
@@ -71,5 +104,43 @@
 
   .saving-panel .panel-amount {
     color: #fff;
+  }
+
+  .records-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--appSpacing);
+    background-color: #fff;
+    padding: var(--appSpacing);
+    border-radius: 8px;
+  }
+
+  .record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .record {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .type-selector {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .text-btn {
+    font-weight: bold;
+    padding: 0;
+    color: #ccc;
+  }
+
+  .text-btn:is(.active) {
+    color: #202020;
   }
 </style>
