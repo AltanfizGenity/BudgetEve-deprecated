@@ -3,15 +3,15 @@
   import { records, totalBalance } from "../store/appstore";
 
   let activeTypePanel = "income";
-  let filteredRecord;
+  let filteredRecord = [];
 
   onMount(() => updateFilteredRecord());
   beforeUpdate(() => updateFilteredRecord());
 
   function updateFilteredRecord() {
-    filteredRecord = $records.filter(
-      (record) => record.type === activeTypePanel,
-    );
+    filteredRecord = $records
+      .filter((record) => record.type === activeTypePanel)
+      .reverse();
   }
 </script>
 
