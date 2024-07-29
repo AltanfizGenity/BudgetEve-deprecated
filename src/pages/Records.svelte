@@ -3,6 +3,7 @@
   import { records, totalBalance } from "../store/appstore";
   import { formatDateID, getDateOfFormattedDateID } from "../utils/date";
   import Panel from "../components/core/Panel.svelte";
+  import Record from "../components/core/Record.svelte";
 
   let groupedRecords = new Map();
 
@@ -56,14 +57,7 @@
         <div class="date">{getDateOfFormattedDateID(group[0])}</div>
         <div class="record-list">
           {#each group[1] as record}
-            <div class="record">
-              <div class="left-info">
-                <div class="type">{record.category}</div>
-              </div>
-              <div class="right-info">
-                <div class="amount">{record.amount}</div>
-              </div>
-            </div>
+            <Record {record} />
           {/each}
         </div>
       </div>
@@ -112,14 +106,6 @@
     background-color: #fff;
     box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
     border-radius: 5px;
-  }
-
-  .record {
-    padding: 0.8rem var(--appSpacing);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
+    padding: 0 1rem;
   }
 </style>

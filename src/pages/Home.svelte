@@ -2,6 +2,7 @@
   import { beforeUpdate, onMount } from "svelte";
   import { records, totalBalance } from "../store/appstore";
   import Panel from "../components/core/Panel.svelte";
+  import Record from "../components/core/Record.svelte";
 
   let activeTypePanel = "income";
   let filteredRecord = [];
@@ -42,14 +43,7 @@
     </div>
     <div class="record-list">
       {#each filteredRecord as record}
-        <div class="record">
-          <div class="left-info">
-            <div class="type">{record.category}</div>
-          </div>
-          <div class="right-info">
-            <div class="amount">{record.amount}</div>
-          </div>
-        </div>
+        <Record {record} />
       {/each}
     </div>
   </div>
@@ -82,14 +76,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-  }
-
-  .record {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    justify-content: space-between;
-    cursor: pointer;
   }
 
   .type-selector {
