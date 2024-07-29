@@ -4,15 +4,26 @@
   import { formatDateID, getDateOfFormattedDateID } from "../utils/date";
   import Panel from "../components/core/Panel.svelte";
   import Record from "../components/core/Record.svelte";
+  import { tweened } from "svelte/motion";
 
   let groupedRecords = new Map();
+  let totalIncome = tweened(0, {
+    duration: 100,
+  });
+  let totalExpense = tweened(0, {
+    duration: 100,
+  });
 
   onMount(() => {
     groupRecordsByDate();
+    totalIncome.set($totalBalance.income);
+    totalExpense.set($totalBalance.expense);
   });
 
   beforeUpdate(() => {
     groupRecordsByDate();
+    totalIncome.set($totalBalance.income);
+    totalExpense.set($totalBalance.expense);
   });
 
   function groupRecordsByDate() {
@@ -47,9 +58,9 @@
       title="income"
       name="income"
       type="primary"
-      amount={$totalBalance.income}
+      amount={Math.round($totalIncome)}
     />
-    <Panel title="expense" name="expense" amount={$totalBalance.expense} />
+    <Panel title="expense" name="expense" amount={Math.round($totalExpense)} />
   </div>
   <div class="record-panel">
     {#each groupedRecords as group}
