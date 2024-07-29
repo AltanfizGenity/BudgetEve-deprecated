@@ -2,6 +2,7 @@
   import { beforeUpdate, onMount } from "svelte";
   import { records, totalBalance } from "../store/appstore";
   import { formatDateID, getDateOfFormattedDateID } from "../utils/date";
+  import Panel from "../components/core/Panel.svelte";
 
   let groupedRecords = new Map();
 
@@ -40,15 +41,14 @@
 
 <section id="records">
   <h1>Records</h1>
-  <div class="type-panel">
-    <div class="panel panel-income">
-      <div class="panel-type">income</div>
-      <div class="panel-amount">{$totalBalance.income}</div>
-    </div>
-    <div class="panel panel-expense">
-      <div class="panel-type">expense</div>
-      <div class="panel-amount">{$totalBalance.expense}</div>
-    </div>
+  <div class="type-panels">
+    <Panel
+      title="income"
+      name="income"
+      type="primary"
+      amount={$totalBalance.income}
+    />
+    <Panel title="expense" name="expense" amount={$totalBalance.expense} />
   </div>
   <div class="record-panel">
     {#each groupedRecords as group}
@@ -80,48 +80,12 @@
     gap: var(--appSpacing);
   }
 
-  .type-panel {
+  .type-panels {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--appSpacing);
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 2rem;
   }
-
-  .panel {
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border-radius: 5px;
-  }
-
-  .panel-type {
-    font-size: 0.8rem;
-    color: #aaa;
-    text-transform: capitalize;
-  }
-
-  .panel-income {
-    background-color: var(--accentColor);
-  }
-
-  .panel-income .panel-type {
-    color: #ddd;
-  }
-
-  .panel-income .panel-amount {
-    color: #fff;
-  }
-
-  .panel-amount {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #505050;
-    margin-left: auto;
-  }
-
-  /* consider using theme */
 
   .record-panel {
     margin-top: var(--appSpacing);
