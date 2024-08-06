@@ -1,32 +1,15 @@
-$appSpacing: 1.2rem;
-
-// colors
-$primaryColor: #316dda;
-$secondaryColor: #7aa5f1;
-$accentColor: #508cf8;
-$dangerColor: #f0758d;
-$foregroundColor: #ffffff;
-$bgColor: #f9fbfd;
-
-// font
-$fontStack: "Roboto", sans-serif, Arial;
-
-// dimensions
-$radius: 10px;
-
-// buttons
-$paddingSpace: 0.5rem 1rem;
+@use "base";
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: $fontStack;
+  font-family: base.$fontStack;
 }
 
 body {
-  padding: $appSpacing;
-  background-color: $bgColor;
+  padding: base.$appSpacing;
+  background-color: base.$bgColor;
 }
 
 #app {
@@ -39,25 +22,25 @@ button {
 }
 
 .text-btn {
-  border-radius: $radius;
-  padding: $paddingSpace;
+  border-radius: base.$radius;
+  padding: base.$paddingSpace;
   background-color: transparent;
 
   &.primary {
-    background-color: $primaryColor;
+    background-color: base.$primaryColor;
     color: #eee;
   }
 
   &.danger {
-    background-color: $dangerColor;
+    background-color: base.$dangerColor;
     color: #eee;
   }
 
   &.primary-outline {
-    color: $primaryColor;
+    color: base.$primaryColor;
   }
 
   &.danger-outline {
-    color: $dangerColor;
+    color: base.$dangerColor;
   }
 }
