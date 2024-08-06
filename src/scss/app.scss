@@ -42,22 +42,22 @@ button {
   border-radius: $radius;
   padding: $paddingSpace;
   background-color: transparent;
-}
 
-.primary-text-btn {
-  color: $primaryColor;
-}
+  &.primary {
+    background-color: $primaryColor;
+    color: #eee;
+  }
 
-.primary-btn {
-  background-color: $primaryColor;
-  color: #eee;
-}
+  &.danger {
+    background-color: $dangerColor;
+    color: #eee;
+  }
 
-.danger-btn {
-  background-color: $dangerColor;
-  color: #eee;
-}
+  &.primary-outline {
+    color: $primaryColor;
+  }
 
-.danger-text-btn {
-  color: $dangerColor;
+  &.danger-outline {
+    color: $dangerColor;
+  }
 }

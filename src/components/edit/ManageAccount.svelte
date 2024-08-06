@@ -29,7 +29,7 @@
         <div class="option">
           {#if $budgetAccounts.length > 1}
             <button
-              class="btn text-btn danger-text-btn"
+              class="text-btn danger-outline"
               on:click={() => removeAccount(account)}>remove</button
             >
           {/if}

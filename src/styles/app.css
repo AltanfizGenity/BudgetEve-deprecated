@@ -24,22 +24,18 @@ button {
   padding: 0.5rem 1rem;
   background-color: transparent;
 }
-
-.primary-text-btn {
-  color: #316dda;
-}
-
-.primary-btn {
+.text-btn.primary {
   background-color: #316dda;
   color: #eee;
 }
-
-.danger-btn {
+.text-btn.danger {
   background-color: #f0758d;
   color: #eee;
 }
-
-.danger-text-btn {
+.text-btn.primary-outline {
+  color: #316dda;
+}
+.text-btn.danger-outline {
   color: #f0758d;
 }
 

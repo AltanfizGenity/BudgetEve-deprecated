@@ -17,11 +17,11 @@
   </div>
   <div class="actions">
     <button
-      class="btn text-btn primary-btn"
+      class="btn text-btn primary"
       on:click={() => ($isAccountFormOpen = true)}>new account</button
     >
     <button
-      class="btn text-btn primary-text-btn"
+      class="btn text-btn primary-outline"
       on:click={() => ($isManageAccountOpen = true)}>manage account</button
     >
   </div>
