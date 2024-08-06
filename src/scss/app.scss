@@ -1,0 +1,63 @@
+$appSpacing: 1.2rem;
+
+// colors
+$primaryColor: #316dda;
+$secondaryColor: #7aa5f1;
+$accentColor: #508cf8;
+$dangerColor: #f0758d;
+$foregroundColor: #ffffff;
+$bgColor: #f9fbfd;
+
+// font
+$fontStack: "Roboto", sans-serif, Arial;
+
+// dimensions
+$radius: 10px;
+
+// buttons
+$paddingSpace: 0.5rem 1rem;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $fontStack;
+}
+
+body {
+  padding: $appSpacing;
+  background-color: $bgColor;
+}
+
+#app {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.text-btn {
+  border-radius: $radius;
+  padding: $paddingSpace;
+  background-color: transparent;
+}
+
+.primary-text-btn {
+  color: $primaryColor;
+}
+
+.primary-btn {
+  background-color: $primaryColor;
+  color: #eee;
+}
+
+.danger-btn {
+  background-color: $dangerColor;
+  color: #eee;
+}
+
+.danger-text-btn {
+  color: $dangerColor;
+}
