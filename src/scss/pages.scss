@@ -1,0 +1,98 @@
+@use "utils";
+@use "base";
+
+.app-section {
+  @include utils.flex(column, base.$appSpacing);
+  position: relative;
+}
+
+#accounts {
+  .account-list {
+    width: 100%;
+    @include utils.flex(column);
+    background-color: base.$foregroundColor;
+  }
+
+  .account {
+    width: inherit;
+    @include utils.flex($justify: space-between, $align: center);
+    border-radius: base.$radius;
+    padding: 1rem;
+
+    &:not(:nth-child(1)) {
+      border-top: 1px solid #ddd;
+    }
+  }
+}
+
+#home {
+  .accounts-panel {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .records-panel {
+    @include utils.flex(column, base.$appSpacing);
+    background-color: base.$foregroundColor;
+    padding: base.$appSpacing;
+    border-radius: base.$radius;
+    width: 100%;
+  }
+
+  .record-list {
+    @include utils.flex(column, 1rem);
+    width: 100%;
+  }
+
+  .type-selector {
+    @include utils.flex($gap: 1rem);
+  }
+
+  .text-btn {
+    font-weight: bold;
+    padding: 0;
+    color: base.$secondaryTextColor;
+  }
+
+  .text-btn:is(.active) {
+    color: base.$textColor;
+  }
+}
+
+#records {
+  .type-panels {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .record-panel {
+    @include utils.flex(column, base.$appSpacing);
+    width: 100%;
+    margin-top: base.$appSpacing;
+  }
+
+  .record-group {
+    @include utils.flex(column, 0.5rem);
+    width: 100%;
+  }
+
+  .record-group .date {
+    color: base.$secondaryTextColor;
+    font-size: 0.8rem;
+  }
+
+  .record-list {
+    @include utils.flex(column, 1rem);
+    background-color: base.$foregroundColor;
+    border-radius: base.$radius;
+    box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
+    padding: 0 1rem;
+    width: 100%;
+  }
+}

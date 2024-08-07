@@ -163,6 +163,7 @@ button {
 
 .record {
   @include utils.flex($justify: space-between, $align: center);
+  width: 100%;
   cursor: pointer;
   padding: 0.8rem 0;
 

@@ -176,6 +176,7 @@ button {
   gap: 0;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   cursor: pointer;
   padding: 0.8rem 0;
 }
