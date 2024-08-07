@@ -1,4 +1,5 @@
 @use "base";
+@use "utils";
 
 * {
   box-sizing: border-box;
@@ -42,5 +43,42 @@ button {
 
   &.danger-outline {
     color: base.$dangerColor;
+  }
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  @include utils.flex(column, base.$appSpacing);
+
+  .input-group {
+    @include utils.flex(column, 1rem);
+  }
+
+  label {
+    text-transform: capitalize;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 1rem;
+    border-radius: base.$radius;
+    border: 1px solid base.$secondaryColor;
+    background-color: base.$foregroundColor;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input[type="number"] {
+    appearance: textfield;
+  }
+
+  .submit-btn {
+    margin-top: auto;
+    font-weight: bold;
   }
 }

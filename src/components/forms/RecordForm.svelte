@@ -35,7 +35,7 @@
   useHeader
   on:close={() => ($isRecordFormOpen = false)}
 >
-  <form on:submit|preventDefault={submit}>
+  <form on:submit|preventDefault={submit} class="form">
     <!-- Type -->
     <div class="input-group">
       <label for="type">type</label>
@@ -94,6 +94,7 @@
       <label for="note">note</label>
       <textarea name="note" id="note" rows="10"></textarea>
     </div>
-    <button type="submit" class="submit-btn">Add record</button>
+    <button type="submit" class="text-btn primary submit-btn">Add record</button
+    >
   </form>
 </Overlay>

@@ -28,7 +28,7 @@
   isOpen={$isAccountFormOpen}
   on:close={() => ($isAccountFormOpen = false)}
 >
-  <form on:submit|preventDefault={submit}>
+  <form on:submit|preventDefault={submit} class="form">
     <!-- Type -->
     <div class="input-group">
       <label for="name">Name</label>
