@@ -17,7 +17,7 @@
   }
 </script>
 
-<section id="home">
+<section id="home" class="app-section">
   <h1>Hello, User!</h1>
   <div class="accounts-panel">
     <Panel
@@ -48,48 +48,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  #home {
-    display: flex;
-    flex-direction: column;
-    gap: var(--appSpacing);
-  }
-
-  .accounts-panel {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto auto;
-    gap: 2rem;
-  }
-
-  .records-panel {
-    display: flex;
-    flex-direction: column;
-    gap: var(--appSpacing);
-    background-color: #fff;
-    padding: var(--appSpacing);
-    border-radius: 8px;
-  }
-
-  .record-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .type-selector {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .text-btn {
-    font-weight: bold;
-    padding: 0;
-    color: #ccc;
-  }
-
-  .text-btn:is(.active) {
-    color: #202020;
-  }
-</style>

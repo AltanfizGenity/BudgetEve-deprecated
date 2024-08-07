@@ -51,7 +51,7 @@
   }
 </script>
 
-<section id="records">
+<section id="records" class="app-section">
   <h1>Records</h1>
   <div class="type-panels">
     <Panel
@@ -77,46 +77,4 @@
 </section>
 
 <style>
-  #records {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--appSpacing);
-  }
-
-  .type-panels {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto auto;
-    gap: 2rem;
-  }
-
-  .record-panel {
-    margin-top: var(--appSpacing);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .record-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .record-group .date {
-    color: #aaa;
-    font-size: 0.8rem;
-  }
-
-  .record-list {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--accentColor) / 2);
-    background-color: #fff;
-    box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
-    border-radius: 5px;
-    padding: 0 1rem;
-  }
 </style>
