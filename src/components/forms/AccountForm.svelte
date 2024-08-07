@@ -61,6 +61,8 @@
       <label for="note">Note</label>
       <textarea name="note" id="note"></textarea>
     </div>
-    <button type="submit" class="submit-btn">add account</button>
+    <button type="submit" class="text-btn primary submit-btn"
+      >add account</button
+    >
   </form>
 </Overlay>

@@ -11,7 +11,7 @@
   height: $height;
 }
 
-@mixin position($pos, $top-or-bottom: 0, $left-or-right: 0) {
+@mixin position($pos, $top-or-bottom, $left-or-right) {
   position: $pos;
   #{$top-or-bottom}: 0;
   #{$left-or-right}: 0;
@@ -19,4 +19,12 @@
 
 %flex-row-between {
   @include flex($justify: space-between, $align: center);
+}
+
+%fixed-top-left {
+  @include position(fixed, top, left);
+}
+
+%full-container {
+  @include dimension(100%, 100%);
 }

@@ -1,3 +1,14 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.overlay .content, .overlay .main-content {
+  width: 100%;
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,6 +23,17 @@ body {
 
 #app {
   width: 100%;
+}
+
+main {
+  margin-top: 64px;
+}
+main .section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: start;
+  align-items: start;
 }
 
 button {
@@ -50,6 +72,7 @@ button {
   align-items: start;
 }
 .form .input-group {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -62,6 +85,7 @@ button {
 .form input,
 .form textarea,
 .form select {
+  width: 100%;
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid #7aa5f1;
@@ -74,8 +98,89 @@ button {
   appearance: textfield;
 }
 .form .submit-btn {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
   margin-top: auto;
   font-weight: bold;
+}
+
+.overlay {
+  width: 100%;
+  height: 100dvh;
+  background-color: #f9fbfd;
+}
+.overlay .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+  padding: 1.2rem 0;
+}
+.overlay .content > * {
+  padding: 0 1.2rem;
+}
+.overlay .header {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.overlay .title {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+.overlay .main-content {
+  margin-top: 1.2rem;
+  overflow-y: auto;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: start;
+  align-items: start;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.panel .title {
+  font-size: 0.8rem;
+  color: #bbb;
+  text-transform: capitalize;
+}
+.panel .amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #202020;
+  margin-left: auto;
+}
+.panel.default {
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(20, 20, 20, 0.1);
+}
+.panel.primary {
+  background-color: #316dda;
+  box-shadow: 5px 5px 15px rgba(49, 109, 218, 0.1);
+}
+.panel.primary .amount,
+.panel.primary .title {
+  color: #ffffff;
+}
+
+.record {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.8rem 0;
+}
+.record:not(:last-child) {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
 }
 
 /*# sourceMappingURL=app.css.map */

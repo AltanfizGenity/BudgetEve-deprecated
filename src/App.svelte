@@ -30,9 +30,3 @@
 </main>
 <RecordForm />
 <MobileNavbar />
-
-<style>
-  main {
-    margin-top: 64px;
-  }
-</style>

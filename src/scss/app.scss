@@ -17,6 +17,14 @@ body {
   width: 100%;
 }
 
+main {
+  margin-top: 64px;
+
+  .section {
+    @include utils.flex(column, base.$appSpacing);
+  }
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -53,6 +61,7 @@ button {
   @include utils.flex(column, base.$appSpacing);
 
   .input-group {
+    width: 100%;
     @include utils.flex(column, 1rem);
   }
 
@@ -63,6 +72,7 @@ button {
   input,
   textarea,
   select {
+    width: 100%;
     padding: 1rem;
     border-radius: base.$radius;
     border: 1px solid base.$secondaryColor;
@@ -78,7 +88,85 @@ button {
   }
 
   .submit-btn {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
     margin-top: auto;
     font-weight: bold;
+  }
+}
+
+.overlay {
+  @include utils.dimension(100%, 100dvh);
+  @extend %fixed-top-left;
+  background-color: base.$bgColor;
+
+  .content {
+    @extend %full-container;
+    @include utils.flex(column, $gap: 1rem);
+    padding: base.$appSpacing 0;
+
+    & > * {
+      padding: 0 base.$appSpacing;
+    }
+  }
+
+  .header {
+    @include utils.flex($justify: space-between, $align: center);
+  }
+
+  .title {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+  }
+
+  .main-content {
+    @extend %full-container;
+    margin-top: base.$appSpacing;
+    overflow-y: auto;
+  }
+}
+
+.panel {
+  @include utils.flex(column, 0.5rem);
+  padding: 1rem;
+  border-radius: base.$radius;
+
+  .title {
+    font-size: base.$panelTitleSize;
+    color: base.$secondaryTextColor;
+    text-transform: capitalize;
+  }
+
+  .amount {
+    font-size: base.$contentTitle;
+    font-weight: bold;
+    color: base.$textColor;
+    margin-left: auto;
+  }
+
+  &.default {
+    background-color: base.$foregroundColor;
+    box-shadow: 5px 5px 15px rgba(20, 20, 20, 0.1);
+  }
+
+  &.primary {
+    background-color: base.$primaryColor;
+    box-shadow: 5px 5px 15px rgba(49, 109, 218, 0.1);
+
+    .amount,
+    .title {
+      color: base.$foregroundColor;
+    }
+  }
+}
+
+.record {
+  @include utils.flex($justify: space-between, $align: center);
+  cursor: pointer;
+  padding: 0.8rem 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   }
 }
