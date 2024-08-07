@@ -1,4 +1,5 @@
 <script>
+  import "../../styles/navbar.css";
   import {
     AccountsButton,
     AddButton,
@@ -36,24 +37,3 @@
     isActive={$currentPage === "accounts"}
   />
 </nav>
-
-<style>
-  #mobile-navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: calc(48px + 0.5rem);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--appSpacing);
-    z-index: 100;
-    background-color: #fff;
-  }
-
-  .hover-btn-wrapper {
-    position: relative;
-    top: -25%;
-  }
-</style>

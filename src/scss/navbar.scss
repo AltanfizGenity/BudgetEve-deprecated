@@ -1,14 +1,19 @@
 @use "base";
+@use "utils";
 
 #navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: base.$appSpacing;
+  @include utils.dimension(100%, 72px);
+  @include utils.position(fixed, top, left);
+  @extend %flex-row-between;
+  padding: 0 base.$appSpacing;
   z-index: 100;
+}
+
+#mobile-navbar {
+  @include utils.dimension(100%, 48px);
+  @include utils.position(fixed, bottom, left);
+  @extend %flex-row-between;
+  padding: 0 base.$appSpacing;
+  z-index: 100;
+  background-color: #fff;
 }

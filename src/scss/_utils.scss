@@ -1,5 +1,22 @@
-@mixin flex($direction: row, $gap) {
+@mixin flex($direction: row, $gap: 0, $justify: start, $align: start) {
   display: flex;
   flex-direction: $direction;
   gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin dimension($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($pos, $top-or-bottom: 0, $left-or-right: 0) {
+  position: $pos;
+  #{$top-or-bottom}: 0;
+  #{$left-or-right}: 0;
+}
+
+%flex-row-between {
+  @include flex($justify: space-between, $align: center);
 }
