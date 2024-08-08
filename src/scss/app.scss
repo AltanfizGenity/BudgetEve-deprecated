@@ -1,16 +1,16 @@
-@use "base";
-@use "utils";
+@use "base" as *;
+@use "utils" as *;
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: base.$fontStack;
+  font-family: $fontStack;
 }
 
 body {
-  padding: base.$appSpacing;
-  background-color: base.$bgColor;
+  padding: $appSpacing;
+  background-color: $bgColor;
 }
 
 #app {
@@ -21,7 +21,7 @@ main {
   margin-top: 64px;
 
   .section {
-    @include utils.flex(column, base.$appSpacing);
+    @include flex(column, $appSpacing);
   }
 }
 
@@ -31,26 +31,26 @@ button {
 }
 
 .text-btn {
-  border-radius: base.$radius;
-  padding: base.$paddingSpace;
+  border-radius: $radius;
+  padding: $paddingSpace;
   background-color: transparent;
 
   &.primary {
-    background-color: base.$primaryColor;
+    background-color: $primaryColor;
     color: #eee;
   }
 
   &.danger {
-    background-color: base.$dangerColor;
+    background-color: $dangerColor;
     color: #eee;
   }
 
   &.primary-outline {
-    color: base.$primaryColor;
+    color: $primaryColor;
   }
 
   &.danger-outline {
-    color: base.$dangerColor;
+    color: $dangerColor;
   }
 }
 
@@ -58,11 +58,11 @@ button {
   position: relative;
   width: 100%;
   min-height: 100%;
-  @include utils.flex(column, base.$appSpacing);
+  @include flex(column, $appSpacing);
 
   .input-group {
     width: 100%;
-    @include utils.flex(column, 1rem);
+    @include flex(column, 1rem);
   }
 
   label {
@@ -74,9 +74,9 @@ button {
   select {
     width: 100%;
     padding: 1rem;
-    border-radius: base.$radius;
-    border: 1px solid base.$secondaryColor;
-    background-color: base.$foregroundColor;
+    border-radius: $radius;
+    border: 1px solid $secondaryColor;
+    background-color: $foregroundColor;
   }
 
   textarea {
@@ -96,22 +96,22 @@ button {
 }
 
 .overlay {
-  @include utils.dimension(100%, 100dvh);
+  @include dimension(100%, 100dvh);
   @extend %fixed-top-left;
-  background-color: base.$bgColor;
+  background-color: $bgColor;
 
   .content {
     @extend %full-container;
-    @include utils.flex(column, $gap: 1rem);
-    padding: base.$appSpacing 0;
+    @include flex(column, $gap: 1rem);
+    padding: $appSpacing 0;
 
     & > * {
-      padding: 0 base.$appSpacing;
+      padding: 0 $appSpacing;
     }
   }
 
   .header {
-    @include utils.flex($justify: space-between, $align: center);
+    @include flex($justify: space-between, $align: center);
   }
 
   .title {
@@ -122,47 +122,47 @@ button {
 
   .main-content {
     @extend %full-container;
-    margin-top: base.$appSpacing;
+    margin-top: $appSpacing;
     overflow-y: auto;
   }
 }
 
 .panel {
-  @include utils.flex(column, 0.5rem);
+  @include flex(column, 0.5rem);
   padding: 1rem;
-  border-radius: base.$radius;
+  border-radius: $radius;
 
   .title {
-    font-size: base.$panelTitleSize;
-    color: base.$secondaryTextColor;
+    font-size: $panelTitleSize;
+    color: $secondaryTextColor;
     text-transform: capitalize;
   }
 
   .amount {
-    font-size: base.$contentTitle;
+    font-size: $contentTitle;
     font-weight: bold;
-    color: base.$textColor;
+    color: $textColor;
     margin-left: auto;
   }
 
   &.default {
-    background-color: base.$foregroundColor;
+    background-color: $foregroundColor;
     box-shadow: 5px 5px 15px rgba(20, 20, 20, 0.1);
   }
 
   &.primary {
-    background-color: base.$primaryColor;
+    background-color: $primaryColor;
     box-shadow: 5px 5px 15px rgba(49, 109, 218, 0.1);
 
     .amount,
     .title {
-      color: base.$foregroundColor;
+      color: $foregroundColor;
     }
   }
 }
 
 .record {
-  @include utils.flex($justify: space-between, $align: center);
+  @include flex($justify: space-between, $align: center);
   width: 100%;
   cursor: pointer;
   padding: 0.8rem 0;

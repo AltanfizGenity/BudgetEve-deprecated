@@ -1,19 +1,19 @@
-@use "base";
-@use "utils";
+@use "base" as *;
+@use "utils" as *;
 
 #navbar {
-  @include utils.dimension(100%, 72px);
-  @include utils.position(fixed, top, left);
+  @include dimension(100%, 72px);
+  @include position(fixed, top, left);
   @extend %flex-row-between;
-  padding: 0 base.$appSpacing;
+  padding: 0 $appSpacing;
   z-index: 100;
 }
 
 #mobile-navbar {
-  @include utils.dimension(100%, 48px);
-  @include utils.position(fixed, bottom, left);
+  @include dimension(100%, 48px);
+  @include position(fixed, bottom, left);
   @extend %flex-row-between;
-  padding: 0 base.$appSpacing;
+  padding: 0 $appSpacing;
   z-index: 100;
   background-color: #fff;
 }

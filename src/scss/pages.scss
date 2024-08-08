@@ -1,22 +1,22 @@
-@use "utils";
-@use "base";
+@use "base" as *;
+@use "utils" as *;
 
 .app-section {
-  @include utils.flex(column, base.$appSpacing);
+  @include flex(column, $appSpacing);
   position: relative;
 }
 
 #accounts {
   .account-list {
     width: 100%;
-    @include utils.flex(column);
-    background-color: base.$foregroundColor;
+    @include flex(column);
+    background-color: $foregroundColor;
   }
 
   .account {
     width: inherit;
-    @include utils.flex($justify: space-between, $align: center);
-    border-radius: base.$radius;
+    @include flex($justify: space-between, $align: center);
+    border-radius: $radius;
     padding: 1rem;
 
     &:not(:nth-child(1)) {
@@ -35,30 +35,30 @@
   }
 
   .records-panel {
-    @include utils.flex(column, base.$appSpacing);
-    background-color: base.$foregroundColor;
-    padding: base.$appSpacing;
-    border-radius: base.$radius;
+    @include flex(column, $appSpacing);
+    background-color: $foregroundColor;
+    padding: $appSpacing;
+    border-radius: $radius;
     width: 100%;
   }
 
   .record-list {
-    @include utils.flex(column, 1rem);
+    @include flex(column, 1rem);
     width: 100%;
   }
 
   .type-selector {
-    @include utils.flex($gap: 1rem);
+    @include flex($gap: 1rem);
   }
 
   .text-btn {
     font-weight: bold;
     padding: 0;
-    color: base.$secondaryTextColor;
+    color: $secondaryTextColor;
   }
 
   .text-btn:is(.active) {
-    color: base.$textColor;
+    color: $textColor;
   }
 }
 
@@ -72,25 +72,25 @@
   }
 
   .record-panel {
-    @include utils.flex(column, base.$appSpacing);
+    @include flex(column, $appSpacing);
     width: 100%;
-    margin-top: base.$appSpacing;
+    margin-top: $appSpacing;
   }
 
   .record-group {
-    @include utils.flex(column, 0.5rem);
+    @include flex(column, 0.5rem);
     width: 100%;
   }
 
   .record-group .date {
-    color: base.$secondaryTextColor;
+    color: $secondaryTextColor;
     font-size: 0.8rem;
   }
 
   .record-list {
-    @include utils.flex(column, 1rem);
-    background-color: base.$foregroundColor;
-    border-radius: base.$radius;
+    @include flex(column, 1rem);
+    background-color: $foregroundColor;
+    border-radius: $radius;
     box-shadow: 1px 2px 5px rgba(20, 20, 20, 0.1);
     padding: 0 1rem;
     width: 100%;
